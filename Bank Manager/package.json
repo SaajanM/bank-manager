@@ -4,5 +4,7 @@
   "description": "Bank Manager",
   "main": "app.js",
   "author": "Mythical Engineer",
-  "dependencies": {}
+  "dependencies": {
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6"
+  }
 }
