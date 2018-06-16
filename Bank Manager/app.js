@@ -34,10 +34,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         args = args.splice(1);
         switch (cmd) {
             case "give":
-                if (parseInt(args[0]) >= 0 && args[1] !== "" && parseInt(args[0]) == args[0] && args[1].includes("<@")) {
+                if (parseInt(args[0]) >= 0 && args[1] !== "" && parseInt(args[0]) == args[0]) {
                     bot.sendMessage({
                         to: channelID,
-                        message: "Deposited $" + args[0] + "!"
+                        message: "Deposited $" + args[0] + "!" + "\nMsg was :\n" + message
                     });
                 }
                 break;
