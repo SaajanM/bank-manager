@@ -1,9 +1,8 @@
 {
   "name": "bank-manager",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Bank Manager",
   "main": "app.js",
-  "author": {
-    "name": "saaja"
-  }
+  "author": "Mythical Engineer",
+  "dependencies": {}
 }
