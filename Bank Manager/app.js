@@ -37,7 +37,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 if (parseInt(args[0]) >= 0 && args[1] !== "" && parseInt(args[0]) == args[0] && args[1].includes("<@")) {
                     bot.sendMessage({
                         to: channelID,
-                        message: "Deposited $" + args[0] + "!";
+                        message: "Deposited $" + args[0] + "!"
                     });
                 }
                 break;
