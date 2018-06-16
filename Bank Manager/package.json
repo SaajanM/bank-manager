@@ -1,0 +1,9 @@
+{
+  "name": "bank-manager",
+  "version": "0.0.0",
+  "description": "Bank Manager",
+  "main": "app.js",
+  "author": {
+    "name": "saaja"
+  }
+}
