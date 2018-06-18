@@ -5,7 +5,8 @@
   "main": "app.js",
   "author": "Mythical Engineer",
   "dependencies": {
-    "discord.js": "11.3.2"
+    "discord.js": "11.3.2",
+    "enmap": "^2.6.3"
   },
   "scripts": {
     "start": "app.js"
