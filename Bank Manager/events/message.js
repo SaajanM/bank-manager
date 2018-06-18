@@ -6,7 +6,7 @@
     if (message.content.indexOf(client.config.prefix1) === 0) {
 
         // Our standard argument/command name definition.
-        let args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+        let args = message.content.slice(client.config.prefix1.length).trim().split(/ +/g);
         let command = args.shift().toLowerCase();
 
         // Grab the command data from the client.commands1 Enmap
@@ -20,7 +20,7 @@
     } else if (message.content.indexOf(client.config.prefix2) === 0) {
 
         // Our standard argument/command name definition.
-        let args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+        let args = message.content.slice(client.config.prefix2.length).trim().split(/ +/g);
         let command = args.shift().toLowerCase();
 
         // Grab the command data from the client.commands2 Enmap
