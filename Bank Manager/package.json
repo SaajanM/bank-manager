@@ -9,6 +9,6 @@
     "enmap": "^2.6.3"
   },
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   }
 }
