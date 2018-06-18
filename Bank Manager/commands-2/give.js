@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
         }
     }
     if (isOneOnline) return;
-    message.channel.send("Hey " + ownersRole.mention() + "!\n<@" + message.author.id + "> wants to make a deposit of $" + args[0]);
+    message.channel.send("Hey " + ownersRole.mention + "!\n<@" + message.author.id + "> wants to make a deposit of $" + args[0]);
 
 
 };
