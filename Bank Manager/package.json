@@ -6,7 +6,6 @@
   "author": "Mythical Engineer",
   "dependencies": {
     "discord.js": "^11.3.2",
-    "node-fetch": "^2.1.2",
     "enmap": "^2.6.3"
   },
   "scripts": {
