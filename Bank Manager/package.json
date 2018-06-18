@@ -5,6 +5,9 @@
   "main": "app.js",
   "author": "Mythical Engineer",
   "dependencies": {
-    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6"
+    "discord.js": "^11.3.2"
+  },
+  "scripts": {
+    "start": "app.js"
   }
 }

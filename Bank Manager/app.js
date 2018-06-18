@@ -1,47 +1,35 @@
-var Discord = require('discord.io');
-var auth = require('./auth.json');
-// Initialize Discord Bot
-var bot = new Discord.Client({
-    token: auth.token,
-    autorun: true
-});
-bot.on('ready', function (evt) {
+var Discord = require('discord.js'); //Discord API access
+var config = require('./config.json'); //Config file
+const fs = require("fs"); //Access File System
 
+// Initialize Discord Bot
+const client = new Discord.Client();
+client.login(config.token);
+client.config = config;
+
+//Initialization Confirmation
+client.on("ready", () => {
+    console.log("Bot Initialized!");
 });
-bot.on('message', function (user, userID, channelID, message, evt) {
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
-    var args;
-    var cmd;
-    if (message.substring(0, 1) == '!') {
-        args = message.substring(1).split(' ');
-        cmd = args[0];
-        args = args.splice(1);
-        switch (cmd) {
-            // !ping
-            case 'test':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'All online!'
-                });
-                break;
-            // Just add any case commands if you want to..
-        }
-    }
-    if (message.substring(0, 1) == "$") {
-        args = message.substring(1).split(" ");
-        cmd = args[0];
-        args = args.splice(1);
-        switch (cmd) {
-            case "give":
-                if (parseInt(args[0]) >= 0 && args[1] !== "" && parseInt(args[0]) == args[0]) {
-                    bot.sendMessage({
-                        to: channelID,
-                        message: "Deposited $" + args[0] + "!" + "\nMsg was :\n" + message
-                    });
-                }
-                break;
-        
-        }
-    }
+
+fs.readdir("./events/", (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        const event = require(`./events/${file}`);
+        let eventName = file.split(".")[0];
+        client.on(eventName, event.bind(null, client));
+    });
+});
+
+client.commands = new Enmap();
+
+fs.readdir("./commands/", (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Attempting to load command ${commandName}`);
+        client.commands.set(commandName, props);
+    });
 });
