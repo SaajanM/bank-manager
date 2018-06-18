@@ -22,15 +22,26 @@ fs.readdir("./events/", (err, files) => {
     });
 });
 
-client.commands = new Enmap();
+client.commands1 = new Enmap();
+client.commands2 = new Enmap();
 
-fs.readdir("./commands/", (err, files) => {
+fs.readdir("./commands-1/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
         if (!file.endsWith(".js")) return;
-        let props = require(`./commands/${file}`);
+        let props = require(`./commands-1/${file}`);
         let commandName = file.split(".")[0];
         console.log(`Attempting to load command ${commandName}`);
-        client.commands.set(commandName, props);
+        client.commands1.set(commandName, props);
+    });
+});
+fs.readdir("./commands-2/", (err, files) => {
+    if (err) return console.error(err);
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands-2/${file}`);
+        let commandName = file.split(".")[0];
+        console.log(`Attempting to load command ${commandName}`);
+        client.commands2.set(commandName, props);
     });
 });
