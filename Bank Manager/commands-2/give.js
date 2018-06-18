@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
     if (args[1].charAt(0) != "<") return;
     if ("<@" + message.author.id + ">" == args[1]) return;
     const ownersRole = message.guild.roles.find("name", "Bank Owners");
-    const owners = ownersRole.members();
+    const owners = ownersRole.members;
     var isOneOnline = false;
     for (var u in owners) {
         if (owners[u].presence.status == "online") {
