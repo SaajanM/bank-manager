@@ -6,7 +6,7 @@
   "author": "Mythical Engineer",
   "dependencies": {
     "discord.js": "11.3.2",
-    "enmap": "^2.6.3"
+    "enmap": "2.6.3"
   },
   "scripts": {
     "start": "node app.js"
