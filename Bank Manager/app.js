@@ -2,7 +2,6 @@ var Discord = require('discord.js'); //Discord API access
 var config = require('./config.json'); //Config file
 const fs = require("fs"); //Access File System
 const Enmap = require("enmap"); //Enmap library
-const fetch = require("node-fetch");
 
 // Initialize Discord Bot
 const client = new Discord.Client();
