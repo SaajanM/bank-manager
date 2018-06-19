@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
     if (args[0].charAt(0) == "<" || args[0] <= 0) return;
     if (args[1].charAt(0) != "<") return;
     if ("<@" + message.author.id + ">" == args[1]) return;
-    const ownersRole = message.guild.roles.find("name", "Bank Owners");
+    const ownersRole = message.guild.roles.find("455439873810104340");
     const owners = ownersRole.members;
     var isOneOnline = false;
     for (var u in owners) {
