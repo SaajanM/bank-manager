@@ -13,6 +13,7 @@ exports.run = (client, message, args) => {
             isOneOnline = true;
             console.log(owners[u].user.username);
         }
+        console.log(owner[u]);
     }
     if (isOneOnline) return;
     message.channel.send("Hey <@&455439873810104340>!\n<@" + message.author.id + "> wants to make a deposit of $" + args[0]);
