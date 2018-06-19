@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
     var userId = message.author.id;
-    if (userId != client.config.ownerID) return message.channel.send("Sorry <@" + userId + ">\nThis command is meant for the bot owner.")
+    if (userId != client.config.ownerID) return message.channel.send("Sorry <@" + userId + ">\nThis command is meant for the bot owner.");
     if (!args || args.length < 1) return message.channel.send("`Missing Required Argument: commandset`");
     if (!args || args.length < 2) return message.channel.send("`Missing Required Argument: command");
     const commandSet = args[0];

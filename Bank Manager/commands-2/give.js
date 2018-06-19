@@ -8,6 +8,7 @@ exports.run = (client, message, args) => {
     const owners = ownersRole.members;
     var isOneOnline = false;
     owners.forEach(function (presence) {
+        console.log(presence);
         if (presence.status == "online") {
             isOneOnline = true;
         }
