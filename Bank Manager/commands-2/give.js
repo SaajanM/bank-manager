@@ -1,11 +1,5 @@
 exports.run = (client, message, args) => {
-    var isAVault = false;
-    for (var v in client.config.vaults) {
-        if (client.config.vaults[v] == message.channel.id) {
-            isAVault = true;
-        }
-    }
-    if (!isAVault) return;
+    if (message.channel.id == "455443988938358784") return;
     if (!args || args.length < 2) return;
     if (args[0].charAt(0) == "<" || args[0] <= 0) return;
     if (args[1].charAt(0) != "<") return;
