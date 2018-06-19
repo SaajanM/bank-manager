@@ -2,5 +2,9 @@
   "token": "NDU3MzQwMjA3MjM1MDcyMDAw.DgchDw._LwLf6lArYfEOhYWYPXDIBjS8hs",
   "prefix1": "m$",
   "prefix2": "$",
-  "ownerID": "299339169199816714"
+  "ownerID": "299339169199816714",
+  "vaults": {
+    "vault1": "455453280932462612",
+    "vault2": "455453118830739456"
+  }
 }
