@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     //console.log(owners);
     var isOneOnline = false;
     owners.forEach(function (presence) {
-        if (owners[u].user.presence.status == "online") {
+        if (presence.status == "online") {
             isOneOnline = true;
         }
     })
