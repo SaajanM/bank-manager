@@ -1,5 +1,0 @@
-﻿exports.run = (client, message, args) => {
-    var userId = message.author.id;
-    if (userId != client.config.ownerID) return message.channel.send("Sorry <@" + userId + ">\nThis command is meant for the bot owner.");
-    message.channel.send("$bet 3 3 1");
-}

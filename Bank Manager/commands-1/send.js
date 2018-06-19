@@ -5,5 +5,6 @@
     for (var i = 0; i < args.length; i++) {
         cmd += args[i];
     }
-    message.channel.send("$"+cmd);
+    message.delete();
+    message.channel.send(cmd);
 }

@@ -29,7 +29,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="Command.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="commands-1\reload.js" />
+    <Compile Include="commands-1\send.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="commands-1\test.js" />
     <Compile Include="commands-2\give.js" />
     <Compile Include="events\message.js">
