@@ -9,6 +9,7 @@ exports.run = (client, message, args) => {
     for (var u in owners) {
         if (owners[u].presence.status == "online") {
             isOneOnline = true;
+            console.log(owners[u].username);
         }
     }
     if (isOneOnline) return;
