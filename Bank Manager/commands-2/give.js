@@ -6,12 +6,12 @@ exports.run = (client, message, args) => {
     const ownersRole = message.guild.roles.get("455439873810104340");
     console.log(ownersRole.name);
     const owners = ownersRole.members;
-    console.log(owners);
+    //console.log(owners);
     var isOneOnline = false;
     for (var u in owners) {
-        if (owners[u].presence.status == "online") {
+        if (owners[u].user.presence.status == "online") {
             isOneOnline = true;
-            console.log(owners[u].username);
+            console.log(owners[u].user.username);
         }
     }
     if (isOneOnline) return;
