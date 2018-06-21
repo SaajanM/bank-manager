@@ -15,7 +15,7 @@
         }).on("close", function () {
             commandName = attachment.filename.split(".")[0];
             if (client.commands1.has(commandName)) {
-                delete require.cache[require.resolve(`../${attachments.filename}`)];
+                delete require.cache[require.resolve(`../${attachment.filename}`)];
                 props = require(`../${attachment.filename}`);
                 console.log(`Attempting to load command ${commandName}`);
                 client.commands1.delete(commandName);
