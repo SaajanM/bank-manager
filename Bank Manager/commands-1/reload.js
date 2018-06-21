@@ -26,11 +26,11 @@ exports.run = (client, message, args) => {
     if (commandSet == 1) {
         client.commands1.delete(commandName);
         const props = require(`${path}${commandName}.js`);
-        client.commands.set(commandName, props);
+        client.commands1.set(commandName, props);
     } else {
         client.commands2.delete(commandName);
         const props = require(`${path}${commandName}.js`);
-        client.commands.set(commandName, props);
+        client.commands2.set(commandName, props);
     }
     message.channel.send(`The command ${commandName} has been reloaded`);
 };

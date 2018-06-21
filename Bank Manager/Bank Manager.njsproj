@@ -29,7 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="Command.js">
+    <Compile Include="commands-1\create.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="commands-1\reload.js" />
