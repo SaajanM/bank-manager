@@ -7,9 +7,8 @@ exports.run = (client, message, args) => {
     const ownersRole = message.guild.roles.get("455439873810104340");
     const owners = ownersRole.members;
     var isOneOnline = false;
-    owners.forEach(function (presence) {
-        console.log(presence);
-        if (presence.status == "online") {
+    owners.forEach(function (owner) {
+        if (owner.presence.status == "online") {
             isOneOnline = true;
         }
     })
