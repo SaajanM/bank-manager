@@ -24,6 +24,7 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands1 = new Enmap();
 client.commands2 = new Enmap();
+client.sheets = require("./sheets-api/sheets.js");
 
 fs.readdir("./commands-1/", (err, files) => {
     if (err) return console.error(err);

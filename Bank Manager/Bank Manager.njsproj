@@ -38,9 +38,11 @@
     </Compile>
     <Compile Include="commands-1\test.js" />
     <Compile Include="commands-2\give.js" />
+    <Compile Include="commands-2\give2.js" />
     <Compile Include="events\message.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="sheets-api\sheets.js" />
     <Content Include="config.json">
       <SubType>Code</SubType>
     </Content>
@@ -51,6 +53,7 @@
     <Folder Include="commands-2\" />
     <Folder Include="events\" />
     <Folder Include="commands-1\" />
+    <Folder Include="sheets-api\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
