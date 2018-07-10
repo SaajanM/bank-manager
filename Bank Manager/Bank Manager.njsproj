@@ -29,6 +29,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="commands-1\blackjack.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="commands-1\create.js">
       <SubType>Code</SubType>
     </Compile>
@@ -36,12 +39,12 @@
     <Compile Include="commands-1\send.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="commands-1\sql.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="commands-1\test.js" />
     <Compile Include="commands-2\give_old.js" />
     <Compile Include="commands-2\give.js" />
-    <Compile Include="custom-apis\sql.js">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="events\message.js">
       <SubType>Code</SubType>
     </Compile>

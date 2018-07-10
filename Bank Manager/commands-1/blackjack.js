@@ -43,9 +43,12 @@ exports.run = (client, message, args) => {
             console.log(result);
             if (result[0] == undefined || result[0].Chips < bet) {
                 message.channel.send("You dont have enough poker chips.\nGet some at the cashier channel!");
+                await client.sqlConnection.close();
+                await sql.close();
             } else {
                 console.log("Dealing");
-                client.sqlConnection.close();
+                await client.sqlConnection.close();
+                await sql.close();
                 collector1.stop();
                 deal();
             }
@@ -190,7 +193,8 @@ exports.run = (client, message, args) => {
             var result = await client.sqlConnection.request().query(`SELECT * FROM Chips WHERE UserID LIKE '${message.author.id}'`);
             result = result.recordset[0].Chips;
             await client.sqlConnection.request().query(`UPDATE Chips SET Chips = ${Math.round(result + bet * multiplier)}`);
-            client.sqlConnection.close();
+            await client.sqlConnection.close();
+            await sql.close();
             message.channel.send("Your new balance is " + Math.round(result + bet * multiplier) + " Chips");
         } catch (err) {
             console.log(err);
