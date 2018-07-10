@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
     if (userId != client.config.ownerID) return message.channel.send("Sorry <@" + userId + ">\nThis command is meant for the bot owner.");
     if (!args || args.length < 1) return message.channel.send("`Missing Required Argument: query`");
     asyncQuery(args[0]);
-    const asyncQuery = (query) => {
+    const asyncQuery = async (query) => {
         try {
             if (client.hasOwnProperty("sqlConnection")) {
                 await client.sqlConnection.close();
