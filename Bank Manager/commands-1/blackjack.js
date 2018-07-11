@@ -39,9 +39,8 @@ exports.run = (client, message, args) => {
                 console.log(err);
             });
             var result = await client.sqlConnection.request().query(`SELECT * FROM Chips WHERE UserID LIKE '${message.author.id}'`);
-            result = result.recordset;
-            console.log(result);
-            if (result[0] == undefined || result[0].Chips < bet) {
+            console.log(result.recordset);
+            if (result.recordset[0] == undefined || result.recordset[0].Chips < bet) {
                 message.channel.send("You dont have enough poker chips.\nGet some at the cashier channel!");
                 await client.sqlConnection.close();
                 await sql.close();
