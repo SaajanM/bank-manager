@@ -41,6 +41,7 @@ exports.run = (client, message, args) => {
                     var length = await client.sqlConnection.request().query("sp_spaceused 'Chips'");
                     length = length.recordset[0].rows;
                     await client.sqlConnection.request().query(`INSERT INTO Chips VALUES (${length},'${message.author.id}',${parseInt(args[0])})`);
+                    message.channel.send(`Your new balance is ${parseInt(args[0])} Chips. Happy Gambling!`);
                     await client.sqlConnection.close();
                     await sql.close();
                 } else {
