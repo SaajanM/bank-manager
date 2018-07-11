@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
     var dealerHand = [];
     var bet;
     message.channel.send("Welcome to Blackjack.\nIm assuming You know how to play...\nHow much do you want to bet?\nRespond with a whole number");
-    const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+    const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
     collector1.on('collect', collectedMessage => {
         bet = parseInt(collectedMessage.content);
         if (bet > 500) {
@@ -83,7 +83,7 @@ exports.run = (client, message, args) => {
     function hitStand() {
         console.log("Decision time");
         message.channel.send("Hit, Stand, or Double");
-        hitCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+        hitCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
         hitCollector.on("collect", decisionFunction);
     }
     function decisionFunction(decision, collector) {
