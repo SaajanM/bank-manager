@@ -191,7 +191,7 @@ exports.run = (client, message, args) => {
             });
             var result = await client.sqlConnection.request().query(`SELECT * FROM Chips WHERE UserID LIKE '${message.author.id}'`);
             result = result.recordset[0].Chips;
-            await client.sqlConnection.request().query(`UPDATE Chips SET Chips = ${Math.round(result + bet * multiplier)}`);
+            await client.sqlConnection.request().query(`UPDATE Chips SET Chips = ${Math.round(result + bet * multiplier)} WHERE UserID LIKE '${message.author.id}'`);
             await client.sqlConnection.close();
             await sql.close();
             message.channel.send("Your new balance is " + Math.round(result + bet * multiplier) + " Chips");

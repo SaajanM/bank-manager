@@ -45,7 +45,7 @@ exports.run = (client, message, args) => {
                     await client.sqlConnection.close();
                     await sql.close();
                 } else {
-                    await client.sqlConnection.request().query(`UPDATE Chips SET Chips = ${result[0].Chips + parseInt(args[0])}`);
+                    await client.sqlConnection.request().query(`UPDATE Chips SET Chips = ${result[0].Chips + parseInt(args[0])} WHERE UserID LIKE '${message.author.id}'`);
                     message.channel.send(`Your new balance is ${result[0].Chips + parseInt(args[0])} Chips. Happy Gambling!`);
                     await client.sqlConnection.close();
                     await sql.close();
